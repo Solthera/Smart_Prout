@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Smart Sprout Dashboard</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Smart Sprout — Monitoring Dashboard</h1>
+  </header>
+
+  <main>
+
+    <!-- Realtime Data Cards -->
+    <section class="cards">
+      <div class="card">
+        <h3>Temperature (°C)</h3>
+        <p id="suhu">-</p>
+      </div>
+
+      <div class="card">
+        <h3>Humidity (%)</h3>
+        <p id="hum-air">-</p>
+      </div>
+
+      <div class="card">
+        <h3>Soil Moisture</h3>
+        <p id="hum-soil">-</p>
+      </div>
+
+      <div class="card">
+        <h3>Water Level</h3>
+        <p id="level">-</p>
+      </div>
+    </section>
+
+    <!-- Actuator Control -->
+    <section class="controls">
+      <h2>Actuator Control</h2>
+
+      <button onclick="setActuator('pompa', 'ON')">Pump ON</button>
+      <button onclick="setActuator('pompa', 'OFF')">Pump OFF</button>
+
+      <button onclick="setActuator('kipas', 'ON')">Fan ON</button>
+      <button onclick="setActuator('kipas', 'OFF')">Fan OFF</button>
+
+      <button onclick="setActuator('lampu', 'ON')">Lamp ON</button>
+      <button onclick="setActuator('lampu', 'OFF')">Lamp OFF</button>
+    </section>
+
+    <!-- Charts -->
+    <section class="charts">
+      <h2>Temperature History</h2>
+      <canvas id="chartSuhu"></canvas>
+
+      <h2 style="margin-top: 40px">Soil Moisture History</h2>
+      <canvas id="chartSoil"></canvas>
+    </section>
+
+  </main>
+
+  <!-- JS -->
+  <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

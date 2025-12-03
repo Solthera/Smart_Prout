@@ -1,0 +1,7 @@
+for activate SPI Rapsberry
+1. sudo raspi-config
+2. Interface Options → SPI → Enable
+3. sudo reboot
+4. ls /dev/spi*
+    output: /dev/spidev0.0
+            /dev/spidev0.1
